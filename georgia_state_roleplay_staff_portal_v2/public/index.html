@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Staff Center</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="login" class="screen">
+  <div class="login-card">
+    <img id="loginLogo" src="logo.png" alt="Logo">
+    <span class="kicker">SECURE STAFF PORTAL</span>
+    <h1>Staff Sign In</h1>
+    <p>Sign in to access the Georgia State Roleplay staff center.</p>
+    <form id="loginForm">
+      <label>Username<input id="username" autocomplete="username" required></label>
+      <label>Password<input id="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn primary">Sign In</button>
+      <div id="loginError" class="error"></div>
+    </form>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+<header class="top">
+  <div class="brand" onclick="showPage('dashboard')"><img id="brandLogo" src="logo.png"><div><b id="brandName">Georgia State Roleplay</b><small>STAFF CENTER</small></div></div>
+  <div class="top-right"><span id="userBadge">ADMIN</span><button onclick="logout()" class="ghost">Sign Out</button></div>
+</header>
+<div class="layout">
+<aside>
+  <div class="side-label">STAFF CENTER</div>
+  <button data-page="dashboard" onclick="showPage('dashboard')">Dashboard</button>
+  <div class="side-label">STAFF INFORMATION</div>
+  <button data-page="rules" onclick="showPage('rules')">Staff Rules</button>
+  <button data-page="guides" onclick="showPage('guides')">Staff Guides</button>
+  <button data-page="training" onclick="showPage('training')">Training</button>
+  <button data-page="procedures" onclick="showPage('procedures')">Procedures</button>
+  <div class="side-label">ADMINISTRATION</div>
+  <button data-page="admin" onclick="showPage('admin')">Admin Panel</button>
+</aside>
+<main id="main"></main>
+</div>
+</div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
